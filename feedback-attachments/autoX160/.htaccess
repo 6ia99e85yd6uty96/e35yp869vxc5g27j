@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f [NC]
+RewriteCond %{REQUEST_FILENAME} /([^/]+\.(png|jpe?g|gif))$
+RewriteCond %{DOCUMENT_ROOT}/common-statics/feedback-attachments/original/%1 -f [NC]
+RewriteRule .* resizer.php?fileName=$0
